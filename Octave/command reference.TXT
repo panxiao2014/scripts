@@ -1,0 +1,138 @@
+Ng uses octave 3.2.4
+.size(A): tells dimension of matrix A
+
+.size(A,1): tells row of matrix A
+
+.size(A,2): tells colunm of matrix A
+
+.length(A): the longest dimension of A, usually used to vector
+
+. cd 'c:\temp': change directory
+
+. pwd, ls:current directory, list files
+
+. load featuresX.dat: load data file, store in matrix featuresX
+
+. whos: show all variables in Octave
+
+. clear A: delete variable A in Octave
+
+. v = priceY(1:10): assign v as first 10 element of vector Y
+
+. save hello.mat v: save variable v to file hello.mat
+
+. save hello.txt v -ascii: save v to text file
+
+. A(3,2): index to get matrix element
+
+. A(2,:): everything in second row of A
+
+. A(:,2): everything in second colunm of A
+
+. A([1 3], :): get everything in first and third row of A
+
+. A(:, 2) = [10; 11; 12]: assigne second column with value 10 11 12
+
+. A = [A, [100;101;102]]: append another column to A
+
+. A(:): put all elements of A into a singel vector
+
+. C = [A B]: put A and B together from left to right to form a matrix C
+
+. C = [A; B]: put A and B together from top to bottom to form maxtrix C
+
+. A .* B: element wise multiply, not the matrix multiply
+
+. A .^ 2: element wise square
+
+. 1 ./ A: element wise inverse of A
+
+. log(A), exp(A), abs(A), -A: element wise operation
+
+. ones(3,1): a matrix with all ones
+
+. A':transpose of A
+
+. [val, ind] = max(a): return val as the maximum value of a, ind as the index of this value (a is a one row matrix in example)
+
+. find(a < 3): return index of element which is less than 3
+
+. sum(a), prod(a), floor(a), ceil(a): add/multiply/rounds down/rounds up all element
+
+. magic(3): a 3*3 matrix with the equal sum of row, column, diagnal
+
+. A > 3: return a matrix by doing element wise of comparison of A to 3
+
+. rand(3): a 3*3 matrix with random number
+
+. max(A): return colunm wise max value
+
+. max(A, [], 1): return maximum value of each colunm (default)
+
+. max(A, [], 2): return maximum value of each row
+
+. max(max(A)), or max(A(:)): return the maximum value of A
+
+. sum(A, 1): sum per column of A
+
+. sum(A, 2): sum per row of A
+
+. eye(9): 9*9 indentical matrix
+
+. pinv(A): inverse of A
+
+. y1 = sin(pi*t); plot(t, y1): plot the t, y1 output
+
+. plot(t, y1); hold on; plot(t, y2, 'r'): plot both ouptput to the same gragh, with the second use red color
+
+. xlabel('time');ylabel('value'): give the gragh x and y axis labels
+
+. legend('sin', 'cos',); title('my plot'): give legends and title to the plot
+
+. print -dpng 'plog.png'; close: save plot as png file, and close the plot
+
+. figure(1); plot(t, y1); figure(2); plot(t, y2): open two seperate plots
+
+. subplot(1,2,1); plot(t,y1); subplot(1,2,2); plot(t,y2): divide plot as a 1x2 grid, and access 1 grid first, plot one output, and access 2nd grid, plot second output
+
+. axis([0.5 1 -1 1]): set x range of plot to 0.5 to 1; y to -1 to 1
+
+. clf: clear plot
+
+. imagesc(A): a color gragh of matrix A
+
+. for i=1:10,
+    v(i)=2^i;
+  end;
+
+. while i <=5,
+    v(i) = 100;
+    i = i+1;
+  end;
+
+. while true,
+    v(i) = 999;
+    i = i+1;
+    if i == 6,
+      break;
+    end;
+  end;
+
+. if v(1) == 1,
+    disp('the value is one');
+  elseif v(1) == 2,
+    disp('the value is two');
+  else
+    disp('the value is not one or two');
+  end;
+
+. addpath('c:\temp'): add path to Octave search path
+
+. function y=squareFun(x)
+
+  y = x^2;   :write this to a file name squareFun.m, then can call funcion as m = squareFun(v(2))
+
+. function [y1, y2] = squareAndCube(x)
+  
+  y1 = x^2;
+  y2 = x^3;  save it as m file, then can use it as [a, b]= squareAndCube(5)
